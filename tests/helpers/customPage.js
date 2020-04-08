@@ -62,7 +62,7 @@ class CustomPage {
             actions.map(({ method, path, data }) => {
                 return this[method](path, data);
             })
-        )
+        );
     };
 };
 
