@@ -2,7 +2,6 @@ const Page = require('./helpers/customPage');
 
 describe('TESTING BLOG PAGES FUNCTIONALITIES', () => {
     let page;
-
     beforeEach(async () => {
         page = await Page.build();
         await page.goto('http://localhost:3000');
@@ -16,12 +15,10 @@ describe('TESTING BLOG PAGES FUNCTIONALITIES', () => {
             await page.login();
             await page.click('.fixed-action-btn a[href="/blogs/new"]');
         });
-
         test('Can see the create post form', async () => {
             const label = await page.getContentsOf('form label');
             expect(label).toEqual('Blog Title');
         });
-
         describe('and using VALID input values', async () => {
             beforeEach(async () => {
                 await page.type('.title input', 'Automatic Title Test 1');
@@ -41,7 +38,6 @@ describe('TESTING BLOG PAGES FUNCTIONALITIES', () => {
                 expect(content).toEqual('Automatic Content Test 1')
             });
         });
-
         describe('and using INVALID input values', async () => {
             beforeEach(async () => {
                 await page.click('form button');
@@ -54,7 +50,6 @@ describe('TESTING BLOG PAGES FUNCTIONALITIES', () => {
             });
         });
     });
-
     describe('When NOT Logged in', async () => {
         const actions = [
             {
@@ -67,7 +62,6 @@ describe('TESTING BLOG PAGES FUNCTIONALITIES', () => {
                 data: { title: 'T', content: 'C' }
             }
         ];
-
         test('Unauthorized actions in the blog page', async () => {
             const results = await page.execRequests(actions);
             for(let result of results) {
