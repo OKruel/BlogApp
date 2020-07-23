@@ -1,10 +1,10 @@
 # Simple Blog application built with NODE.js
 ## The goal is training the following subjects:
-1. Caching strategies with REDIS-SERVER;
-2. Integrations tests with JEST and PUPPETEER;
-3. Continuous integration with TRAVIS-CI;
++ _Caching strategies with REDIS-SERVER_
+- _Integrations tests with JEST and PUPPETEER_
++ _Continuous integration with TRAVIS-CI_
 
 
-> Project created with the online professor Stephen Grider at Udemy!
+> Project created with the online professor **Stephen Grider** at Udemy!
 
 
